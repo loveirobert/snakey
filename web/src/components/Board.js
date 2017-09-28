@@ -8,21 +8,11 @@ class Board extends Component {
   	super(props);
   }
   
-  componentDidMount() {
-    this.renderSnakes()
-  }
-  
-  renderSnakes() {
-    this.props.snakes.map(snake => {
-      console.log(snake)
-    })
-  }
-  
   render() {
     var cells = []
 
     for (var i=100; i>0; i--) {
-      cells.push(<div className="box" id="cells-{i}" onClick={(e) => console.log(e)}>{i}</div>);
+      cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}</div></div>);
     }
     
     return (
