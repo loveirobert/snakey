@@ -26,7 +26,8 @@ class App extends Component {
           name: 'R2',
           position: 55
         }
-      ]
+      ],
+      socket: io('localhost:1367/notifications', {reconnect: true})
     };
   }
 
@@ -37,27 +38,35 @@ class App extends Component {
   }
   
   componentDidMount() {
-    const socket = io('localhost:3001', {reconnect: true});
-    socket.emit('hello', {hello: true});
-    socket.on('pop', (m) => {
+    this.state.socket.emit('hello', {hello: true});
+    this.state.socket.on('pop', (m) => {
       console.log(m)
     })
-    socket.emit('entered', {haho: true})
+    this.state.socket.emit('entered', {haho: true})
   }
-
+  
   generateRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
     for (var i = 0; i < 6; i++) {
       color += letters[Math.floor(Math.random() * 16)];
     }
-  
+    
     return color;
   }
-
-  onButtonClick(name) {
-    console.log('!!!!!!!!')
-    console.log(name)
+  
+  onButtonClick = name => {
+    const players = this.state.players;
+    const newPlayer = {
+      id: this.generateRandomString,
+      color: this.generateRandomColor(),
+      token: false,
+      name,
+      position: 1
+    };
+    players.push(newPlayer);
+    this.setState({players});
+    this.state.socket.emit('hello', newPlayer);
   }
 
   render() {

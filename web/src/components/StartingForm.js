@@ -13,7 +13,7 @@ class StartingForm extends Component {
   
   render() {
     return (
-      <div>
+      <div className="startform">
         <form>
           <FormGroup controlId="formBasicText">
             <FormControl
@@ -25,7 +25,7 @@ class StartingForm extends Component {
             <FormControl.Feedback />
           </FormGroup>
         </form>
-        <Button onClick={this.handleButtonClick}>Send</Button>
+        <Button className="nameSenderButton" onClick={this.handleButtonClick}>Send</Button>
       </div>
     );
   }
