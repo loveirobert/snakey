@@ -40,6 +40,7 @@ body, html, div#root, .App {
 }
 
 div.ladder1 {
+  opacity: 0.8;
   width: 200px;
   height: 200px;
   background-image: url(assets/ladder2.svg);
@@ -53,6 +54,7 @@ div.ladder1 {
 }
 
 div.ladder2 {
+  opacity: 0.8;
   width: 200px;
   height: 200px;
   background-image: url(assets/ladder2.svg);
@@ -66,6 +68,7 @@ div.ladder2 {
 }
 
 div.ladder3 {
+  opacity: 0.8;
   width: 200px;
   height: 200px;
   background-image: url(assets/ladder2.svg);
@@ -78,6 +81,7 @@ div.ladder3 {
 }
 
 div.ladder4 {
+  opacity: 0.8;
   width: 200px;
   height: 200px;
   background-image: url(assets/ladder2.svg);
@@ -91,6 +95,7 @@ div.ladder4 {
 }
 
 div.ladder5 {
+  opacity: 0.8;
   width: 200px;
   height: 200px;
   background-image: url(assets/ladder2.svg);
@@ -104,6 +109,7 @@ div.ladder5 {
 }
 
 div.ladder6 {
+  opacity: 0.8;
   width: 200px;
   height: 200px;
   background-image: url(assets/ladder2.svg);
@@ -117,6 +123,7 @@ div.ladder6 {
 }
 
 div.snake1 {
+  opacity: 0.3;
   width: 200px;
   height: 200px;
   background-image: url(assets/snake2.svg);
@@ -128,6 +135,7 @@ div.snake1 {
 }
 
 div.snake6 {
+  opacity: 0.3;
   width: 200px;
   height: 200px;
   background-image: url(assets/snake2.svg);
@@ -140,6 +148,7 @@ div.snake6 {
 }
 
 div.snake2 {
+  opacity: 0.3;
   width: 200px;
   height: 200px;
   background-image: url(assets/snake2.svg);
@@ -152,6 +161,7 @@ div.snake2 {
 }
 
 div.snake4 {
+  opacity: 0.3;
   width: 350px;
   height: 200px;
   background-image: url(assets/snake4.svg);
@@ -164,6 +174,7 @@ div.snake4 {
 }
 
 div.snake3 {
+  opacity: 0.3;
   width: 500px;
   height: 300px;
   background-image: url(assets/snake3.svg);
@@ -176,6 +187,7 @@ div.snake3 {
 }
 
 div.snake5 {
+  opacity: 0.3;
   width: 300px;
   height: 300px;
   background-image: url(assets/snake5.svg);
