@@ -45,7 +45,7 @@ class App extends Component {
           src: './assets/snake3.svg',
           position: []
         }
-      ]
+      ],
       socket: io('localhost:1367/notifications', {reconnect: true})
     };
   }
