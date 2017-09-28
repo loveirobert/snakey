@@ -28,7 +28,13 @@ class StartingForm extends Component {
             <FormControl.Feedback />
           </FormGroup>
         </form>
-        <Button className="nameSenderButton" onClick={this.handleButtonClick}>Send</Button>
+        <Button
+          className="nameSenderButton"
+          onClick={this.handleButtonClick}
+          disabled={this.state.name === ''}
+        >
+          Send
+        </Button>
       </div>
     );
   }
