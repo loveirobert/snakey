@@ -6,6 +6,7 @@ body, html, div#root, .App {
 .App {
   background-image: url(assets/background.jpg);
   background-size: cover;
+  clear: both;
 }
 
 .AppLeft {
@@ -14,14 +15,13 @@ body, html, div#root, .App {
 }
 
 .AppRight {
-  float: left;
+  float: right;
   width: 70%;
 }
 
 .App .yourName {
   text-align: center;
   color: #fff;
-  
 }
 
 .box {
@@ -41,6 +41,7 @@ body, html, div#root, .App {
 .Board {
   display: inline-grid;
   grid-template-columns: repeat(10, 70px);
+  margin-top: 10px;
 }
 
 div.players {
