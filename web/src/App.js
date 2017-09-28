@@ -163,7 +163,7 @@ class App extends Component {
                 {!this.state.me && <StartingForm onButtonClick={this.onButtonClick}/>}
                 <div className="AppLeft">
                     <Players players={this.state.players}/>
-                    <Button className="dice" onClick={this.onDiceRoll}>Roll the dice!</Button>
+                    {this.state.me && <Button className="dice" onClick={this.onDiceRoll}>Roll the dice!</Button>}
                     <div className="dicediv">{this.state.dice}</div>
                 </div>
                 <div className="AppRight">
