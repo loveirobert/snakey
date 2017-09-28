@@ -5,6 +5,7 @@ import './App.css';
 import randomstring from 'randomstring';
 import {StartingForm} from './components';
 import {Players} from './components';
+import {Board} from './components';
 
 class App extends Component {
   constructor(props) {
@@ -60,6 +61,7 @@ class App extends Component {
       <div className="App">
         <Players players={this.state.players} />
         <StartingForm onButtonClick={this.onButtonClick} />
+        <Board/>
       </div>
     );
   }
