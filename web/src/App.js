@@ -3,11 +3,13 @@ import io from 'socket.io-client';
 import './App.css';
 import randomstring from 'randomstring';
 import {StartingForm, Players, Board} from './components';
+import { Button } from 'react-bootstrap';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            dice: null,
             me: null,
             players: [
                 {
@@ -94,6 +96,29 @@ class App extends Component {
             </div>
         );
     }
+
+  getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+  onDiceRoll = () => {
+    this.setState({dice: this.getRandomInt(1, 6)});
+    
+  }
+
+  render() {
+    return (
+      <div className="App row">
+        {!this.state.me && <StartingForm onButtonClick={this.onButtonClick} />}
+        <div className="AppLeft">
+          <Players players={this.state.players} />
+          <Button className="dice" onClick={this.onDiceRoll}>Roll the dice!</Button>
+          <div className="dicediv">{this.state.dice}</div>
+        </div>
+        <div className="AppRight">
+          {this.state.me && <Board snakes={this.state.snakes}/>}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
