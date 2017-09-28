@@ -36,8 +36,12 @@ class App extends Component {
   }
   
   componentDidMount() {
-    const socket = io('localhost:1367/notifications', {reconnect: true});
+    const socket = io('localhost:3001', {reconnect: true});
     socket.emit('hello', {hello: true});
+    socket.on('pop', (m) => {
+      console.log(m)
+    })
+    socket.emit('entered', {haho: true})
   }
 
   generateRandomColor() {
