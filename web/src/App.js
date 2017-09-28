@@ -9,7 +9,24 @@ import {Players} from './components';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      players: [
+        {
+          id: 'stg',
+          color: '#ff0',
+          token: true,
+          name: 'R',
+          position: 1
+        },
+        {
+          id: 'stg2',
+          color: '#fff',
+          token: false,
+          name: 'R2',
+          position: 55
+        }
+      ]
+    };
   }
 
   onPress(e) {}
@@ -33,27 +50,16 @@ class App extends Component {
     return color;
   }
 
+  onButtonClick(name) {
+    console.log('!!!!!!!!')
+    console.log(name)
+  }
+
   render() {
-    const players = /*this.state.players*/ [
-      {
-        id: 'stg',
-        color: '#ff0',
-        token: true,
-        name: 'R',
-        position: 1
-      },
-      {
-        id: 'stg2',
-        color: '#fff',
-        token: false,
-        name: 'R2',
-        position: 55
-      }
-    ];
     return (
       <div className="App">
-        <Players players={players} />
-        <StartingForm />
+        <Players players={this.state.players} />
+        <StartingForm onButtonClick={this.onButtonClick} />
       </div>
     );
   }
