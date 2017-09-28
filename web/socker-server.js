@@ -10,7 +10,8 @@ io.on('connection', function (socket) {
 
     socket.on('entered', function (m) {
         console.log(m);
-        io.emit("state_update", m)
+        io.emit("entered", m);
+
     });
 });
 
