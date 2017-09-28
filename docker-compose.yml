@@ -6,6 +6,6 @@ services:
     ports:
       - 8080:80
     volumes: 
-      - ./api:/var/www/html/api
-      - ./web:/var/www/html/web
+      - ./api:/app/api
+      - ./web:/app/web
       
