@@ -48,7 +48,8 @@ div.ladder1 {
   fill: red;
   margin-top: 400px;
   margin-left: 70px;
-  transform: rotate(-7deg) 
+  transform: rotate(-7deg) ;
+  z-index: 999;
 }
 
 div.ladder2 {
@@ -60,7 +61,8 @@ div.ladder2 {
   fill: red;
   margin-top: 10px;
   margin-left: 210px;
-  transform: rotate(-7deg) 
+  transform: rotate(-7deg);
+  z-index: 999;
 }
 
 div.ladder3 {
@@ -71,7 +73,8 @@ div.ladder3 {
   position: fixed;
   fill: red;
   margin-top: 120px;
-  transform: rotate(-7deg) 
+  transform: rotate(-7deg);
+  z-index: 999;
 }
 
 div.ladder4 {
@@ -83,7 +86,8 @@ div.ladder4 {
   fill: red;
   margin-top: 360px;
   margin-left: 350px;
-  transform: rotate(-7deg) 
+  transform: rotate(-7deg);
+  z-index: 999;
 }
 
 div.ladder5 {
@@ -95,7 +99,8 @@ div.ladder5 {
   fill: red;
   margin-top: 250px;
   margin-left: 560px;
-  transform: rotate(-7deg) 
+  transform: rotate(-7deg);
+  z-index: 999;
 }
 
 div.ladder6 {
@@ -107,7 +112,8 @@ div.ladder6 {
   fill: red;
   margin-top: 470px;
   margin-left: 490px;
-  transform: rotate(-7deg) 
+  transform: rotate(-7deg);
+  z-index: 999;
 }
 
 div.snake1 {
@@ -118,6 +124,7 @@ div.snake1 {
   position: fixed;
   fill: red;
   margin-top: 120px;
+  z-index: 999;
 }
 
 div.snake2 {
@@ -129,6 +136,7 @@ div.snake2 {
   fill: red;
   margin-top: 370px;
   margin-left: 500px;
+  z-index: 999;
 }
 
 div.snake4 {
@@ -140,6 +148,7 @@ div.snake4 {
   fill: red;
   margin-top: 30px;
   margin-left: 380px;
+  z-index: 999;
 }
 
 div.snake3 {
@@ -151,6 +160,7 @@ div.snake3 {
   fill: red;
   margin-top: 400px;
   margin-left: 80px;
+  z-index: 999;
 }
 
 div.snake5 {
@@ -162,6 +172,7 @@ div.snake5 {
   fill: red;
   margin-top: 100px;
   margin-left: 200px;
+  z-index: 999;
 }
 
 .Board {
