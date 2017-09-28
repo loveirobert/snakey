@@ -3,7 +3,8 @@ import background from './assets/background.jpg';
 import io from 'socket.io-client';
 import './App.css';
 import randomstring from 'randomstring';
-import {StartingForm} from './components'
+import {StartingForm} from './components';
+import {Players} from './components';
 
 class App extends Component {
   constructor(props) {
@@ -33,8 +34,25 @@ class App extends Component {
   }
 
   render() {
+    const players = /*this.state.players*/ [
+      {
+        id: 'stg',
+        color: '#ff0',
+        token: true,
+        name: 'R',
+        position: 1
+      },
+      {
+        id: 'stg2',
+        color: '#fff',
+        token: false,
+        name: 'R2',
+        position: 55
+      }
+    ];
     return (
       <div className="App">
+        <Players players={players} />
         <StartingForm />
       </div>
     );
