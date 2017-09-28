@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import './App.css';
 import randomstring from 'randomstring';
 import {StartingForm, Players, Board} from './components';
-import { Button } from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 class App extends Component {
     constructor(props) {
@@ -28,26 +28,26 @@ class App extends Component {
                 }
             ],
             snakes: [
-              {
-                id: '1',
-                position: [90 ,58]
-              },
-              {
-                id: '2',
-                position: [43 ,21]
-              },
-              {
-                id: '3',
-                position: [36 ,16]
-              },
-              {
-                id: '4',
-                position: [94 ,72]
-              },
-              {
-                id: '5',
-                position: [74 ,77]
-              }
+                {
+                    id: '1',
+                    position: [90, 58]
+                },
+                {
+                    id: '2',
+                    position: [43, 21]
+                },
+                {
+                    id: '3',
+                    position: [36, 16]
+                },
+                {
+                    id: '4',
+                    position: [94, 72]
+                },
+                {
+                    id: '5',
+                    position: [74, 77]
+                }
             ],
             socket: io('localhost:3001', {reconnect: true})
         };
@@ -62,7 +62,15 @@ class App extends Component {
             const players = this.state.players;
             console.log(m);
 
+            players.find(p => {
+                p.token = false;
+            });
+
             const p = players.find(p => {
+                if (p.id === m.id) {
+                    p.token = true;
+                }
+
                 return p.id === m.id;
             });
 
@@ -71,26 +79,8 @@ class App extends Component {
             players.push(m);
             this.setState({players});
         });
-
-        this.state.socket.on('dice', function (m) {
-            const snakes = this.state.snakes;
-
-            const players = this.state.players;
-            const p = players.find(p => {
-                return p.id === m.id;
-            });
-
-            p.position += m.random;
-
-            snakes.find(s => {
-                if(s.position[0] == p.position)
-                {
-                    p.position = s.position[1];
-                }
-            });
-
-            this.setState({players});
-            this.state.socket.emit('state_update', players);
+        this.state.socket.on('state_update', (m) => {
+            this.setState({players: m});
         });
     }
 
@@ -118,27 +108,45 @@ class App extends Component {
         this.state.socket.emit('entered', newPlayer);
     }
 
-  getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+    getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-  onDiceRoll = () => {
-    this.setState({dice: this.getRandomInt(1, 6)});  
-  }
+    onDiceRoll = () => {
+        const randomInt = this.getRandomInt(1, 6);
+        this.setState({dice: randomInt});
+        const snakes = this.state.snakes;
 
-  render() {
-    return (
-      <div className="App row">
-        {!this.state.me && <StartingForm onButtonClick={this.onButtonClick} />}
-        <div className="AppLeft">
-          <Players players={this.state.players} />
-          <Button className="dice" onClick={this.onDiceRoll}>Roll the dice!</Button>
-          <div className="dicediv">{this.state.dice}</div>
-        </div>
-        <div className="AppRight">
-          {this.state.me && <Board snakes={this.state.snakes}/>}
-        </div>
-      </div>
-    );
-  }
+        const players = this.state.players;
+        const p = players.find(p => {
+            return p.id === this.state.me.id;
+        });
+
+        p.position += randomInt;
+
+        snakes.find(s => {
+            if (s.position[0] == p.position) {
+                p.position = s.position[1];
+            }
+        });
+        console.log(players);
+        this.setState({players});
+        this.state.socket.emit('state_update', players);
+    }
+
+    render() {
+        return (
+            <div className="App row">
+                {!this.state.me && <StartingForm onButtonClick={this.onButtonClick}/>}
+                <div className="AppLeft">
+                    <Players players={this.state.players}/>
+                    <Button className="dice" onClick={this.onDiceRoll}>Roll the dice!</Button>
+                    <div className="dicediv">{this.state.dice}</div>
+                </div>
+                <div className="AppRight">
+                    {this.state.me && <Board snakes={this.state.snakes}/>}
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
