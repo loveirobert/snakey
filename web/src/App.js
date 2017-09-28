@@ -1,15 +1,45 @@
 import React, { Component } from 'react';
 import background from './assets/background.jpg';
+import io from 'socket.io-client';
 import './App.css';
-import io from 'socket.io';
 import randomstring from 'randomstring';
+import {StartingForm} from './components';
+import {Players} from './components';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      players: [
+        {
+          id: 'stg',
+          color: '#ff0',
+          token: true,
+          name: 'R',
+          position: 1
+        },
+        {
+          id: 'stg2',
+          color: '#fff',
+          token: false,
+          name: 'R2',
+          position: 55
+        }
+      ]
+    };
+  }
+
+  onPress(e) {}
     
   generateRandomString() {
-    return randomstring.generate(20);
+    return randomstring.generate(20)
   }
   
+  componentDidMount() {
+    const socket = io('localhost:1367/notifications', {reconnect: true});
+    socket.emit('hello', {hello: true});
+  }
+
   generateRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
@@ -20,13 +50,16 @@ class App extends Component {
     return color;
   }
 
+  onButtonClick(name) {
+    console.log('!!!!!!!!')
+    console.log(name)
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="yourName">
-          Enter Your Name:<br />
-          <input name="playerName" value="" />
-        </div>
+        <Players players={this.state.players} />
+        <StartingForm onButtonClick={this.onButtonClick} />
       </div>
     );
   }
