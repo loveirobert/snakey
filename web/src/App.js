@@ -68,18 +68,18 @@ class App extends Component {
       position: 1
     };
     players.push(newPlayer);
-    this.setState({players});
+    this.setState({players, me: newPlayer});
     this.state.socket.emit('entered', newPlayer);
   }
 
   render() {
     return (
       <div className="App row">
+        {!this.state.me && <StartingForm onButtonClick={this.onButtonClick} />}
         <div className="AppLeft">
           <Players players={this.state.players} />
         </div>
         <div className="AppRight">
-          {!this.state.me && <StartingForm onButtonClick={this.onButtonClick} />}
           {this.state.me && <Board snakes={this.state.snakes}/>}
         </div>
       </div>
