@@ -4,12 +4,15 @@ var io = require('socket.io')(server);
 
 const state = [];
 
-io.on('connection', function(){ 
-  console.log('somebody connected')
-  io.emit('pop', { hello: 'world' });
- });
+io.on('connection', function (socket) {
+    console.log('somebody connected')
+    socket.emit('pop', {hello: 'world'});
 
- io.on('event', function(m){ 
-  console.log(m);
- }); 
+    socket.on('entered', function (m) {
+        console.log(m);
+        io.emit("state_update", m)
+    });
+});
+
+
 server.listen(3001);

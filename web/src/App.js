@@ -41,11 +41,9 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.state.socket.emit('hello', {hello: true});
-    this.state.socket.on('pop', (m) => {
+    this.state.socket.on('state_update', (m) => {
       console.log(m)
     })
-    this.state.socket.emit('entered', {haho: true})
   }
   
   generateRandomColor() {
