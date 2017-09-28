@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
 import Snake from './Snake';
+import Ladder from './Ladder';
 
 class Board extends Component {
   
@@ -22,6 +23,12 @@ class Board extends Component {
         <Snake id={3}/>
         <Snake id={4}/>
         <Snake id={5}/>
+        <Ladder id={1}/>
+        <Ladder id={2}/>
+        <Ladder id={3}/>
+        <Ladder id={4}/>
+        <Ladder id={5}/>
+        <Ladder id={6}/>
         {cells}
       </div>
     )

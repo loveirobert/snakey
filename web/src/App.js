@@ -49,6 +49,32 @@ class App extends Component {
                 position: [74 ,77]
               }
             ],
+            ladders: [
+              {
+                id: '1',
+                position: [18 ,48]
+              },
+              {
+                id: '2',
+                position: [76 ,96]
+              },
+              {
+                id: '3',
+                position: [59 ,89]
+              },
+              {
+                id: '4',
+                position: [24 ,44]
+              },
+              {
+                id: '5',
+                position: [32 ,62]
+              },
+              {
+                id: '6',
+                position: [2 ,32]
+              }
+            ],
             socket: io('localhost:3001', {reconnect: true})
         };
     }

@@ -39,6 +39,77 @@ body, html, div#root, .App {
   margin: 2px;
 }
 
+div.ladder1 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/ladder2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 400px;
+  margin-left: 70px;
+  transform: rotate(-7deg) 
+}
+
+div.ladder2 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/ladder2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 10px;
+  margin-left: 210px;
+  transform: rotate(-7deg) 
+}
+
+div.ladder3 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/ladder2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 120px;
+  transform: rotate(-7deg) 
+}
+
+div.ladder4 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/ladder2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 360px;
+  margin-left: 350px;
+  transform: rotate(-7deg) 
+}
+
+div.ladder5 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/ladder2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 250px;
+  margin-left: 560px;
+  transform: rotate(-7deg) 
+}
+
+div.ladder6 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/ladder2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 470px;
+  margin-left: 490px;
+  transform: rotate(-7deg) 
+}
+
 div.snake1 {
   width: 200px;
   height: 200px;
