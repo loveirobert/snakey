@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import background from './assets/background.jpg';
-import io from 'socket.io';
 import io from 'socket.io-client';
 import './App.css';
 import randomstring from 'randomstring';
@@ -15,7 +14,7 @@ class App extends Component {
   onPress(e) {}
     
   generateRandomString() {
-    return randomstring.generate(20);
+    return randomstring.generate(20)
   }
   
   componentDidMount() {
