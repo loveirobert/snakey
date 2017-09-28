@@ -127,6 +127,18 @@ div.snake1 {
   z-index: 999;
 }
 
+div.snake6 {
+  width: 200px;
+  height: 200px;
+  background-image: url(assets/snake2.svg);
+  background-size: 200px 200px;
+  position: fixed;
+  fill: red;
+  margin-top: 470px;
+  margin-left: 80px;
+  z-index: 1000;
+}
+
 div.snake2 {
   width: 200px;
   height: 200px;

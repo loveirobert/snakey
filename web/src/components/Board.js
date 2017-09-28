@@ -22,6 +22,7 @@ class Board extends Component {
     return (
       <div className="Board">
         <Snake id={1}/>
+        <Snake id={6}/>
         <Snake id={2}/>
         <Snake id={3}/>
         <Snake id={4}/>
