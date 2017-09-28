@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      me: null,
       players: [
         {
           id: 'stg',
@@ -76,10 +77,10 @@ class App extends Component {
       <div className="App row">
         <div className="AppLeft">
           <Players players={this.state.players} />
-          <StartingForm onButtonClick={this.onButtonClick} />
         </div>
         <div className="AppRight">
-          <Board snakes={this.state.snakes}/>
+          {!this.state.me && <StartingForm onButtonClick={this.onButtonClick} />}
+          {this.state.me && <Board snakes={this.state.snakes}/>}
         </div>
       </div>
     );
