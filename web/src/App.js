@@ -12,20 +12,6 @@ class App extends Component {
             dice: null,
             me: null,
             players: [
-                {
-                    id: 'stg',
-                    color: '#ff0',
-                    token: true,
-                    name: 'R',
-                    position: 1
-                },
-                {
-                    id: 'stg2',
-                    color: '#fff',
-                    token: false,
-                    name: 'R2',
-                    position: 55
-                }
             ],
             snakes: [
                 {
@@ -168,7 +154,7 @@ class App extends Component {
                     <div className="dicediv">{this.state.dice}</div>
                 </div>
                 <div className="AppRight">
-                    {this.state.me && <Board snakes={this.state.snakes}/>}
+                    {this.state.me && <Board snakes={this.state.snakes} players={this.state.players}/>}
                 </div>
             </div>
         );

@@ -10,9 +10,13 @@ class Board extends Component {
   
   render() {
     var cells = []
-
+    console.log(this.props.players);
     for (var i=100; i>0; i--) {
-      cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}</div></div>);
+        const playerOnBoard = this.props.players.find(p => {
+          return p.position === i
+        })
+        if (playerOnBoard) console.log(playerOnBoard.position, playerOnBoard)
+        cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}{playerOnBoard ? <div class="player"></div> : null}</div></div>);
     }
     
     return (

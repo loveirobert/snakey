@@ -230,3 +230,11 @@ div.players {
 .dicediv {
   color: #ffffff;
 }
+
+div.player {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  z-index: 1000;
+  border-radius: 12px;
+}
