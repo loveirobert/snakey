@@ -9,7 +9,10 @@ class StartingForm extends Component {
   
   handleInputChange = e => this.setState({ name: e.target.value });
 
-  handleButtonClick = () => this.props.onButtonClick(this.state.name)
+  handleButtonClick = () => {
+    this.props.onButtonClick(this.state.name)
+    this.setState({name: ''})
+  }
   
   render() {
     return (
