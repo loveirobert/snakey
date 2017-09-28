@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ReactSVG from 'react-svg';
+import Snake from './Snake';
 
 class Board extends Component {
   
@@ -11,18 +13,25 @@ class Board extends Component {
   }
   
   renderSnakes() {
-    console.log(this.props);
+    this.props.snakes.map(snake => {
+      console.log(snake)
+    })
   }
   
   render() {
     var cells = []
 
-    for (var i=1; i<101; i++) {
+    for (var i=100; i>0; i--) {
       cells.push(<div className="box" id="cells-{i}" onClick={(e) => console.log(e)}>{i}</div>);
     }
     
     return (
       <div className="Board">
+        <Snake id={1}/>
+        <Snake id={2}/>
+        <Snake id={3}/>
+        <Snake id={4}/>
+        <Snake id={5}/>
         {cells}
       </div>
     )

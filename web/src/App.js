@@ -27,8 +27,23 @@ class App extends Component {
       snakes: [
         {
           id: '1',
-          color: '#ff0',
-          position: [13 ,55]
+          position: [90 ,58]
+        },
+        {
+          id: '2',
+          position: [43 ,21]
+        },
+        {
+          id: '3',
+          position: [36 ,16]
+        },
+        {
+          id: '4',
+          position: [94 ,72]
+        },
+        {
+          id: '5',
+          position: [74 ,77]
         }
       ],
       socket: io('localhost:3001', {reconnect: true})
