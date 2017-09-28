@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import background from './assets/background.jpg';
 import io from 'socket.io-client';
 import './App.css';
 import randomstring from 'randomstring';
@@ -25,6 +24,26 @@ class App extends Component {
           token: false,
           name: 'R2',
           position: 55
+        }
+      ],
+      snakes: [
+        {
+          id: 'snake1',
+          size: [],
+          src: './assets/snake1.svg',
+          position: []
+        },
+        {
+          id: 'snake2',
+          size: [],
+          src: './assets/snake2.svg',
+          position: []
+        },
+        {
+          id: 'snake3',
+          size: [],
+          src: './assets/snake3.svg',
+          position: []
         }
       ]
     };
@@ -58,10 +77,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Players players={this.state.players} />
-        <StartingForm onButtonClick={this.onButtonClick} />
-        <Board/>
+      <div className="App row">
+        <div className="AppLeft">
+          <Players players={this.state.players} />
+          <StartingForm onButtonClick={this.onButtonClick} />
+        </div>
+        <div className="AppRight">
+          <Board snakes={this.state.snakes}/>
+        </div>
       </div>
     );
   }

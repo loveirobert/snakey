@@ -8,9 +8,20 @@ body, html, div#root, .App {
   background-size: cover;
 }
 
+.AppLeft {
+  float: left;
+  width: 30%;
+}
+
+.AppRight {
+  float: left;
+  width: 70%;
+}
+
 .App .yourName {
   text-align: center;
   color: #fff;
+  
 }
 
 .box {
