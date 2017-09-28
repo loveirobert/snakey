@@ -9,11 +9,14 @@ class StartingForm extends Component {
   
   handleInputChange = e => this.setState({ name: e.target.value });
 
-  handleButtonClick = () => this.props.onButtonClick(this.state.name)
+  handleButtonClick = () => {
+    this.props.onButtonClick(this.state.name)
+    this.setState({name: ''})
+  }
   
   render() {
     return (
-      <div>
+      <div className="startform">
         <form>
           <FormGroup controlId="formBasicText">
             <FormControl
@@ -25,7 +28,7 @@ class StartingForm extends Component {
             <FormControl.Feedback />
           </FormGroup>
         </form>
-        <Button onClick={this.handleButtonClick}>Send</Button>
+        <Button className="nameSenderButton" onClick={this.handleButtonClick}>Send</Button>
       </div>
     );
   }
