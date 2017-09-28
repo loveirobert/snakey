@@ -13,7 +13,11 @@ io.on('connection', function (socket) {
         io.emit("entered", m);
 
     });
-});
 
+    socket.on('state_update', function (m) {
+        console.log(m);
+        io.emit('state_update', m);
+    });
+});
 
 server.listen(3001);

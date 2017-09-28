@@ -48,7 +48,6 @@ class App extends Component {
             console.log(m);
 
             const p = players.find(p => {
-
                 return p.id === m.id;
             });
 
@@ -56,7 +55,28 @@ class App extends Component {
 
             players.push(m);
             this.setState({players});
-        })
+        });
+
+        this.state.socket.on('dice', function (m) {
+            const snakes = this.state.snakes;
+
+            const players = this.state.players;
+            const p = players.find(p => {
+                return p.id === m.id;
+            });
+
+            p.position += m.random;
+
+            snakes.find(s => {
+                if(s.position[0] == p.position)
+                {
+                    p.position = s.position[1];
+                }
+            });
+
+            this.setState({players});
+            this.state.socket.emit('state_update', players);
+        });
     }
 
     generateRandomColor() {
