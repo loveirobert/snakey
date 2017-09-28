@@ -12,7 +12,7 @@ class Board extends Component {
     var cells = []
 
     for (var i=100; i>0; i--) {
-      cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}</div></div>);
+        cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}<div class="player"></div></div></div>);
     }
     
     return (
