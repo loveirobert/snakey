@@ -7,6 +7,7 @@ body, html, div#root, .App {
 .App {
   background-image: url(assets/background.jpg);
   background-size: cover;
+  clear: both;
 }
 
 .AppLeft {
@@ -15,14 +16,13 @@ body, html, div#root, .App {
 }
 
 .AppRight {
-  float: left;
+  float: right;
   width: 70%;
 }
 
 .App .yourName {
   text-align: center;
   color: #fff;
-  
 }
 
 .box {
@@ -96,6 +96,7 @@ div.snake5 {
 .Board {
   display: inline-grid;
   grid-template-columns: repeat(10, 70px);
+  margin-top: 10px;
 }
 
 div.players {
@@ -138,4 +139,12 @@ div.players {
   height: 25px;
   margin-left: 111px;
   margin-top: 15px;
+}
+
+.dice {
+  margin-top: 300px;
+}
+
+.dicediv {
+  color: #ffffff;
 }
