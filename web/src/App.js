@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import background from './assets/background.jpg';
 import './App.css';
-import io from 'socket.io';
+import io from 'socket.io-client';
+
 
 class App extends Component {
   onPress(e) {
-    const socket = io('localhost:1367/notifications');
+    
+  }
+  componentDidMount() {
+    const socket = io('localhost:1367/notifications', {reconnect: true});
     socket.emit('hello', {hello: true});
   }
   render() {
