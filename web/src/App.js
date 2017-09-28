@@ -126,6 +126,7 @@ class App extends Component {
         const randomInt = this.getRandomInt(1, 6);
         this.setState({dice: randomInt});
         const snakes = this.state.snakes;
+        const ladders = this.state.ladders;
 
         const players = this.state.players;
         const p = players.find(p => {
@@ -134,11 +135,23 @@ class App extends Component {
 
         p.position += randomInt;
 
+        if(p.position >= 100)
+        {
+
+        }
+
         snakes.find(s => {
             if (s.position[0] == p.position) {
                 p.position = s.position[1];
             }
         });
+
+        ladders.find(l => {
+            if (l.position[0] == p.position) {
+                p.position = l.position[1];
+            }
+        });
+
         console.log(players);
         this.setState({players});
         this.state.socket.emit('state_update', players);
