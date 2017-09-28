@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import background from './assets/background.jpg';
 import './App.css';
-import io from 'socket.io-client';
-
+import io from 'socket.io';
+import randomstring from 'randomstring';
 
 class App extends Component {
-  onPress(e) {
     
+  generateRandomString() {
+    return randomstring.generate(20);
   }
+  
+  generateRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+  
+    return color;
+  }
+
   componentDidMount() {
-    const socket = io('localhost:1367/notifications', {reconnect: true});
-    socket.emit('hello', {hello: true});
+    alert(this.generateRandomColor())
   }
+    
   render() {
     return (
       <div className="App">
