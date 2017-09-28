@@ -28,22 +28,9 @@ class App extends Component {
       ],
       snakes: [
         {
-          id: 'snake1',
-          size: [],
-          src: './assets/snake1.svg',
-          position: []
-        },
-        {
-          id: 'snake2',
-          size: [],
-          src: './assets/snake2.svg',
-          position: []
-        },
-        {
-          id: 'snake3',
-          size: [],
-          src: './assets/snake3.svg',
-          position: []
+          id: '1',
+          color: '#ff0',
+          position: [13 ,55]
         }
       ],
       socket: io('localhost:1367/notifications', {reconnect: true})
