@@ -16,7 +16,7 @@ class Board extends Component {
           return p.position === i
         })
         if (playerOnBoard) console.log(playerOnBoard.position, playerOnBoard)
-        cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}{playerOnBoard ? <div class="player"></div> : null}</div></div>);
+        cells.push(<div className="box" id="cells-{i}"><div className="cellTitle">{i}{playerOnBoard ? <div class="player" style={{backgroundColor: playerOnBoard.color}}></div> : null}</div></div>);
     }
     
     return (
