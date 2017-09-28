@@ -20,10 +20,6 @@ class App extends Component {
     return color;
   }
 
-  componentDidMount() {
-    alert(this.generateRandomColor())
-  }
-    
   render() {
     return (
       <div className="App">
