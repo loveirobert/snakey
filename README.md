@@ -1,2 +1,6 @@
-# snakey
-# snakey
+# Snake
+
+```
+docker build -t yii .
+```
+
