@@ -42,7 +42,6 @@ $config = [
                 ],
             ],
         ],
-        'db'  => require(__DIR__ . '/../../config/db.php'),
     ],
     'modules' => [
         'v1' => [
