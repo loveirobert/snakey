@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactSVG from 'react-svg';
 import Snake from './Snake';
 import Ladder from './Ladder';
 
