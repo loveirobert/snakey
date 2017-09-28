@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import io from 'socket.io-client';
 import './App.css';
 import randomstring from 'randomstring';
-import {StartingForm} from './components';
-import {Players} from './components';
-import {Board} from './components';
+import {StartingForm, Players, Board} from './components';
 
 class App extends Component {
   constructor(props) {
@@ -46,12 +44,10 @@ class App extends Component {
           position: []
         }
       ],
-      socket: io('localhost:1367/notifications', {reconnect: true})
+      socket: io('localhost:3001', {reconnect: true})
     };
   }
 
-  onPress(e) {}
-    
   generateRandomString() {
     return randomstring.generate(20)
   }
@@ -77,7 +73,7 @@ class App extends Component {
   onButtonClick = name => {
     const players = this.state.players;
     const newPlayer = {
-      id: this.generateRandomString,
+      id: this.generateRandomString(),
       color: this.generateRandomColor(),
       token: false,
       name,
@@ -85,7 +81,7 @@ class App extends Component {
     };
     players.push(newPlayer);
     this.setState({players});
-    this.state.socket.emit('hello', newPlayer);
+    this.state.socket.emit('entered', newPlayer);
   }
 
   render() {
